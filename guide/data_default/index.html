@@ -365,35 +365,8 @@
       
         <li class="md-nav__item">
   <a href="#releasessqlmysql" class="md-nav__link">
-    方式一: releases下载sql文件导入mysql
+    releases下载sql文件导入mysql
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-lfsmysql" class="md-nav__link">
-    方式二: git-lfs下载默认数据库表导入mysql
-  </a>
-  
-    <nav class="md-nav" aria-label="方式二: git-lfs下载默认数据库表导入mysql">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-lfs" class="md-nav__link">
-    安装 git-lfs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    拉取仓库大文件
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -563,35 +536,8 @@
       
         <li class="md-nav__item">
   <a href="#releasessqlmysql" class="md-nav__link">
-    方式一: releases下载sql文件导入mysql
+    releases下载sql文件导入mysql
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-lfsmysql" class="md-nav__link">
-    方式二: git-lfs下载默认数据库表导入mysql
-  </a>
-  
-    <nav class="md-nav" aria-label="方式二: git-lfs下载默认数据库表导入mysql">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#git-lfs" class="md-nav__link">
-    安装 git-lfs
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    拉取仓库大文件
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -628,20 +574,9 @@
 
 <h1 id="_1">使用默认数据库资源</h1>
 <p><strong>默认数据库，缓存了一些VIP课程，可以直接使用mygeektime进行在线观看</strong></p>
-<h2 id="releasessqlmysql">方式一: <a href="https://github.com/zkep/mygeektime/releases">releases下载sql文件导入mysql</a></h2>
-<h2 id="git-lfsmysql">方式二: git-lfs下载默认数据库表导入mysql</h2>
-<h3 id="git-lfs">安装 git-lfs</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>git-lfs
-</code></pre></div>
-<h3 id="_2">拉取仓库大文件</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zkep/mygeektime.git
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>mygeektime
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>git<span class="w"> </span>lfs<span class="w"> </span>pull
-</code></pre></div>
+<h2 id="releasessqlmysql"><a href="https://github.com/zkep/mygeektime/releases">releases下载sql文件导入mysql</a></h2>
 <h2 id="taskssqlmysql">将tasks.sql导入到mysql</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-P3306<span class="w"> </span>-p123456<span class="w"> </span>mygeektime<span class="w"> </span>&lt;<span class="w"> </span>docker/mysql/init/tasks.sql
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-P3306<span class="w"> </span>-p123456<span class="w"> </span>mygeektime<span class="w"> </span>&lt;<span class="w"> </span>tasks.sql
 </code></pre></div>
 
 
