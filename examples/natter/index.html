@@ -19,7 +19,7 @@
     
     
       
-        <title>配置自己的邮箱服务器 - 我的极客时间</title>
+        <title>使用natter将服务暴露在公网环境 - 我的极客时间</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#natter" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              配置自己的邮箱服务器
+              使用natter将服务暴露在公网环境
             
           </span>
         </div>
@@ -314,8 +314,22 @@
   
   
     <li class="md-nav__item">
+      <a href="../../guide/register/" class="md-nav__link">
+        注册账号
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../guide/data_default/" class="md-nav__link">
-        默认数据库资源
+        使用默认数据库资源
       </a>
     </li>
   
@@ -364,14 +378,14 @@
       
       
         <label class="md-nav__link" for="__nav_5" tabindex="0" aria-expanded="true">
-          例子🌰
+          高级🌰
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="例子🌰" data-md-level="1">
+      <nav class="md-nav" aria-label="高级🌰" data-md-level="1">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
-          例子🌰
+          高级🌰
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -390,9 +404,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          使用natter将服务暴露在公网环境
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
-        配置自己的邮箱服务器
+        使用natter将服务暴露在公网环境
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    快速开始
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -476,6 +521,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    快速开始
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -489,7 +549,7 @@
                   
 
   
-    <a href="https://github.com/zkep/mygeektime/edit/master/docs/examples/basic.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/zkep/mygeektime/edit/master/docs/examples/natter.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
     </a>
@@ -498,7 +558,42 @@
 
 
 
-<h1 id="_1">配置自己的邮箱服务器</h1>
+<h1 id="natter">使用<a href="https://github.com/MikeWang000000/Natter">natter</a>将服务暴露在公网环境</h1>
+<h2 id="_1">快速开始</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zkep/mygeektime.git
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>docker<span class="w"> </span>natter<span class="w"> </span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 使用内置转发，对外开放本机 8090 端口：</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>python3<span class="w"> </span>natter.py<span class="w"> </span>-p<span class="w"> </span><span class="m">8090</span>
+</code></pre></div>
+<p>使用 iptables 内核转发（需要 root 权限），对外开放本机 8090 端口：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>python3<span class="w"> </span>natter.py<span class="w"> </span>-m<span class="w"> </span>iptables<span class="w"> </span>-p<span class="w"> </span><span class="m">8090</span>
+</code></pre></div>
+<p>或者, 使用 Docker:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--net<span class="o">=</span>host<span class="w"> </span>nattertool/natter<span class="w"> </span>-p<span class="w"> </span><span class="m">8090</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>2023-11-01 01:00:08 [I] Natter
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>2023-11-01 01:00:08 [I] Tips: Use `--help` to see help messages
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>2023-11-01 01:00:12 [I]
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>2023-11-01 01:00:12 [I] tcp://192.168.1.100:13483 &lt;--Natter--&gt; tcp://203.0.113.10:14500
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>2023-11-01 01:00:12 [I]
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>2023-11-01 01:00:12 [I] Test mode in on.
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>2023-11-01 01:00:12 [I] Please check [ http://203.0.113.10:14500 ]
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>2023-11-01 01:00:12 [I]
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>2023-11-01 01:00:12 [I] LAN &gt; 192.168.1.100:13483   [ OPEN ]
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>2023-11-01 01:00:12 [I] LAN &gt; 192.168.1.100:13483   [ OPEN ]
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>2023-11-01 01:00:12 [I] LAN &gt; 203.0.113.10:14500    [ OPEN ]
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>2023-11-01 01:00:13 [I] WAN &gt; 203.0.113.10:14500    [ OPEN ]
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>2023-11-01 01:00:13 [I]
+</code></pre></div>
+<p>上述例子中, <code>203.0.113.10</code> 是您 NAT 1 外部的公网 IP 地址。Natter 打开了 TCP 端口 <code>203.0.113.10:14500</code> 以供测试。</p>
+<p>在局域网外访问 <code>http://203.0.113.10:14500</code> ，您可以看到如下网页:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>It works!
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>--------
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Natter
+</code></pre></div>
 
 
 
