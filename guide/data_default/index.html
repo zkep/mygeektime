@@ -370,13 +370,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#taskssqlmysql" class="md-nav__link">
-    将tasks.sql导入到mysql
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -541,13 +534,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#taskssqlmysql" class="md-nav__link">
-    将tasks.sql导入到mysql
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -575,9 +561,19 @@
 <h1 id="_1">使用默认数据库资源</h1>
 <p><strong>默认数据库，缓存了一些VIP课程，可以直接使用mygeektime进行在线观看</strong></p>
 <h2 id="releasessqlmysql"><a href="https://github.com/zkep/mygeektime/releases">releases下载sql文件导入mysql</a></h2>
-<h2 id="taskssqlmysql">将tasks.sql导入到mysql</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-P3306<span class="w"> </span>-p123456<span class="w"> </span>mygeektime<span class="w"> </span>&lt;<span class="w"> </span>tasks.sql
-</code></pre></div>
+<ul>
+<li>方式1: docker compose 方式启动在启动前，将tasks.sql 放入 docker/mysql/init 目录即可
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>wget<span class="w"> </span>https://github.com/zkep/mygeektime/releases/download/v0.0.1/tasks.sql<span class="w"> </span>-O<span class="w"> </span>docker/mysql/init/tasks.sql
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1"># 进入docker-compose目录</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">cd</span><span class="w"> </span>docker
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 启动</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>docker-compose<span class="w"> </span>up<span class="w">  </span>-d
+</code></pre></div></li>
+<li>方式2: 将tasks.sql导入到mysql
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>mysqldump<span class="w"> </span>-uroot<span class="w"> </span>-P3306<span class="w"> </span>-p123456<span class="w"> </span>mygeektime<span class="w"> </span>&lt;<span class="w"> </span>tasks.sql
+</code></pre></div></li>
+</ul>
 
 
 
